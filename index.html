@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanban App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h2 class="logo">kanban</h2>
+      <nav>
+        <ul>
+          <li class="active">Platform Launch</li>
+          <li>Marketing Plan</li>
+          <li>Roadmap</li>
+          <li class="create">+ Create New Board</li>
+        </ul>
+      </nav>
+      <div class="toggle-container">
+        <span><i class="fa-solid fa-sun"></i></span>
+        <label class="switch">
+          <input type="checkbox" id="modeToggle">
+          <span class="slider round"></span>
+        </label>
+        <span><i class="fa-solid fa-moon"></i></span>
+      </div>
+    </aside>
+
+    <main class="board">
+      <header>
+        <h1>Platform Launch</h1>
+        <button class="add-task">+ Add New Task</button>
+      </header>
+      <section class="columns">
+        <div class="column" data-column="todo">
+          <h3>Todo</h3>
+        </div>
+        <div class="column" data-column="doing">
+          <h3>Doing</h3>
+        </div>
+        <div class="column" data-column="done">
+          <h3>Done</h3>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Task Modal -->
+  <div class="modal" id="taskModal">
+    <div class="modal-content">
+      <h3>Add New Task</h3>
+      <input type="text" id="taskInput" placeholder="Task description..." />
+      <select id="columnSelect">
+        <option value="todo">Todo</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
+      <div class="modal-buttons">
+        <button id="addTaskBtn">Add</button>
+        <button id="cancelTaskBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
